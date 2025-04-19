@@ -133,7 +133,7 @@ export default function Verify() {
             </form>
           ) : (
             <div className="text-green-700 font-semibold font-['OSK'] tracking-wider text-lg">
-              Thank you! We’ll verify your information and get back to you soon.
+              Thank You for Verifying Your Information. Please present this screen at the registration desk to collect your wristbands and badges. We look forward to having you at the Open House. Enjoy the event!
             </div>
           )}
         </motion.div>
