@@ -51,10 +51,16 @@ export default function Verify() {
       }
 
       setSubmitted(true); // Set submitted state to true once verification is successful
-    } catch (err: any) {
-      console.error('Verification error:', err);
-      setError(err.message || 'An unexpected error occurred. Please try again later.');
-    } finally {
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        console.error('Verification error:', err);
+        setError(err.message || 'An unexpected error occurred. Please try again later.');
+      } else {
+        console.error('Unknown error:', err);
+        setError('An unexpected error occurred. Please try again later.');
+      }
+    }
+    finally {
       setLoading(false); // Reset loading state after completion
     }
   };
