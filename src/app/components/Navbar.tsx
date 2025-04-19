@@ -3,12 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 //import Link from 'next/link';
-//import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const router = useRouter(); // Use Next.js router for navigation
   //const router = useRouter();
 
   useEffect(() => {
@@ -50,6 +51,11 @@ const Navbar: React.FC = () => {
       return;
     }
 
+    if (sectionId === 'verification') {
+      // Redirect to the /verify page
+      router.push('/verify'); // Use Next.js router to navigate
+      return;
+    }
     const element = document.getElementById(sectionId === 'register' ? 'registration-section' : sectionId);
     if (element) {
       const navbarHeight = 80;
@@ -63,7 +69,7 @@ const Navbar: React.FC = () => {
     }
   };
 
-  const navigationItems = ['home', 'blog', 'sitemap', 'register'];
+  const navigationItems = ['home', 'blog', 'sitemap', 'verification', 'register'];
 
   return (
     <>
