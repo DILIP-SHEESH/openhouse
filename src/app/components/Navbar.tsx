@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
     }
 
     if (sectionId === 'sitemap') {
-      window.open('https://drive.google.com/file/d/1TVYr2CGyyKWqIohzcB0QAaTtv84RrXlc/view?usp=sharing');
+      window.open('https://drive.google.com/file/d/1F0qPDpReKYygFrM9F_2YRNQcjYfl1CA6/view?usp=sharing');
       return;
     }
 
